@@ -31,4 +31,5 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ## License
 
-FOSS. See repository for details.
+This project is licensed under the GNU General Public License v3.0 (GPLv3).
+See the [LICENSE](LICENSE) file for the full text.
