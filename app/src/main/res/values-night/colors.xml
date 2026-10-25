@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBackground">#121212</color>
+    <color name="colorBackgroundDark">#121212</color>
+    <color name="colorSurface">#1E1E1E</color>
+    <color name="colorSurfaceDark">#1E1E1E</color>
+    <color name="colorTextPrimary">#EEEEEE</color>
+    <color name="colorTextPrimaryDark">#EEEEEE</color>
+    <color name="colorTextSecondary">#BDBDBD</color>
+    <color name="colorTextSecondaryDark">#BDBDBD</color>
+    <color name="colorDivider">#37474F</color>
+    <color name="colorDividerDark">#37474F</color>
+    <color name="resistor_body_dark">#2D1E14</color>
+    <color name="resistor_lead_dark">#607D8B</color>
+</resources>

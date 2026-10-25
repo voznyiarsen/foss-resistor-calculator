@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ResistorCalculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorTextPrimary</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="materialButtonStyle">@style/Widget.ResistorCalculator.Button</item>
+        <item name="chipStyle">@style/Widget.ResistorCalculator.Chip</item>
+        <item name="spinnerStyle">@style/Widget.ResistorCalculator.Spinner</item>
+    </style>
+
+    <style name="Theme.ResistorCalculator.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="Widget.ResistorCalculator.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/chip_stroke</item>
+        <item name="chipCornerRadius">18dp</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+
+    <style name="Widget.ResistorCalculator.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="rippleColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.ResistorCalculator.Spinner" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    </style>
+
+    <style name="Widget.ResistorCalculator.BandCard" parent="">
+        <item name="android:background">@drawable/bg_band_card</item>
+    </style>
+
+</resources>

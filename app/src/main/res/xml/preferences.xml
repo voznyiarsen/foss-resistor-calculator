@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="theme"
+        android:title="@string/settings_theme"
+        android:summary="%s"
+        android:entries="@array/theme_entries"
+        android:entryValues="@array/theme_values"
+        android:defaultValue="system" />
+
+    <SwitchPreferenceCompat
+        android:key="vibration"
+        android:title="@string/settings_vibration"
+        android:summary="@string/settings_vibration_summary"
+        android:defaultValue="true" />
+
+</PreferenceScreen>

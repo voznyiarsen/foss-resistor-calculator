@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Exact colors sampled from original Flutter app resistor images -->
+    <color name="resistor_body">#CD8751</color>
+    <color name="resistor_body_dark">#2D1E14</color>
+
+    <!-- Band colors (exact RGB from original assets) -->
+    <color name="band_black">#432C1C</color>
+    <color name="band_brown">#754714</color>
+    <color name="band_red">#E71E14</color>
+    <color name="band_orange">#E77723</color>
+    <color name="band_yellow">#FFEF14</color>
+    <color name="band_green">#467036</color>
+    <color name="band_blue">#3053B5</color>
+    <color name="band_violet">#801E8B</color>
+    <color name="band_grey">#7F7066</color>
+    <color name="band_silver">#C6B7AD</color>
+    <color name="band_gold">#BD871D</color>
+
+    <!-- Text colors for contrast on each band -->
+    <color name="text_on_light">#000000</color>
+    <color name="text_on_dark">#FFFFFF</color>
+
+    <!-- Resistor lead -->
+    <color name="resistor_lead">#BDBDBD</color>
+    <color name="resistor_lead_dark">#607D8B</color>
+
+    <!-- Header images use these colors -->
+    <color name="header_bg">#2D1E14</color>
+    <color name="header_text">#000000</color>
+    <color name="header_accent">#E6975A</color>
+
+    <!-- Semantic theme colors (matching original app) -->
+    <color name="colorPrimary">#3053B5</color>
+    <color name="colorPrimaryDark">#1E3A7A</color>
+    <color name="colorAccent">#E71E14</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorSurfaceDark">#1E1E1E</color>
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorBackgroundDark">#121212</color>
+    <color name="colorError">#B00020</color>
+    <color name="colorSuccess">#2E7D32</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextPrimaryDark">#EEEEEE</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorTextSecondaryDark">#BDBDBD</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="colorDividerDark">#37474F</color>
+
+</resources>
