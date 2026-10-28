@@ -22,6 +22,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
@@ -73,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         window.navigationBarColor = android.graphics.Color.TRANSPARENT
         applyWindowInsets()
         updateSystemBarAppearance()
+        applyOledColors()
 
         vibrator = resolveVibrator()
         lastNightMode = isNightMode()
@@ -90,6 +93,7 @@ class MainActivity : AppCompatActivity() {
         // The theme can be changed in Settings while this activity is paused.
         applyTheme()
         updateSystemBarAppearance()
+        applyOledColors()
         updateBandRowsIfNeeded()
     }
 
@@ -120,11 +124,28 @@ class MainActivity : AppCompatActivity() {
         val theme = prefs.getString(KEY_THEME, "system") ?: "system"
         val mode = when (theme) {
             "light" -> AppCompatDelegate.MODE_NIGHT_NO
-            "dark" -> AppCompatDelegate.MODE_NIGHT_YES
+            "dark", "oled" -> AppCompatDelegate.MODE_NIGHT_YES
             else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         }
         if (AppCompatDelegate.getDefaultNightMode() != mode) {
             AppCompatDelegate.setDefaultNightMode(mode)
+        }
+    }
+
+    private fun isOledTheme(): Boolean {
+        return prefs.getString(KEY_THEME, "system") == "oled"
+    }
+
+    private fun applyOledColors() {
+        if (!isOledTheme()) return
+        val black = Color.BLACK
+        window.setBackgroundDrawable(ColorDrawable(black))
+        binding.root.setBackgroundColor(black)
+        binding.resultCard.setCardBackgroundColor(Color.BLACK)
+        // Override band card backgrounds
+        for (i in 0 until binding.bandsContainer.childCount) {
+            val child = binding.bandsContainer.getChildAt(i)
+            child?.background?.setColorFilter(black, android.graphics.PorterDuff.Mode.SRC_IN)
         }
     }
 

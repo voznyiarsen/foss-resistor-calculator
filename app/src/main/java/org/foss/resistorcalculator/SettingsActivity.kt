@@ -65,7 +65,7 @@ class SettingsActivity : AppCompatActivity() {
             findPreference<ListPreference>(MainActivity.KEY_THEME)?.setOnPreferenceChangeListener { _, newValue ->
                 val mode = when (newValue as? String) {
                     "light" -> AppCompatDelegate.MODE_NIGHT_NO
-                    "dark" -> AppCompatDelegate.MODE_NIGHT_YES
+                    "dark", "oled" -> AppCompatDelegate.MODE_NIGHT_YES
                     else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                 }
                 AppCompatDelegate.setDefaultNightMode(mode)
