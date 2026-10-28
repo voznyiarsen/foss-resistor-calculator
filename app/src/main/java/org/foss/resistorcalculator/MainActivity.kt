@@ -75,7 +75,6 @@ class MainActivity : AppCompatActivity() {
         window.navigationBarColor = android.graphics.Color.TRANSPARENT
         applyWindowInsets()
         updateSystemBarAppearance()
-        applyOledColors()
 
         vibrator = resolveVibrator()
         lastNightMode = isNightMode()
@@ -86,6 +85,7 @@ class MainActivity : AppCompatActivity() {
 
         setupBandCountChips()
         setupBandRows()
+        applyOledColors()
     }
 
     override fun onResume() {
@@ -93,8 +93,8 @@ class MainActivity : AppCompatActivity() {
         // The theme can be changed in Settings while this activity is paused.
         applyTheme()
         updateSystemBarAppearance()
-        applyOledColors()
         updateBandRowsIfNeeded()
+        applyOledColors()
     }
 
     private fun applyWindowInsets() {
@@ -139,13 +139,24 @@ class MainActivity : AppCompatActivity() {
     private fun applyOledColors() {
         if (!isOledTheme()) return
         val black = Color.BLACK
+
+        // Window background
         window.setBackgroundDrawable(ColorDrawable(black))
+
+        // Root layout and toolbar
         binding.root.setBackgroundColor(black)
-        binding.resultCard.setCardBackgroundColor(Color.BLACK)
-        // Override band card backgrounds
+        binding.toolbar.setBackgroundColor(black)
+
+        // Scrollable content area
+        binding.contentRoot.setBackgroundColor(black)
+
+        // Result card
+        binding.resultCard.setCardBackgroundColor(black)
+
+        // All band cards
         for (i in 0 until binding.bandsContainer.childCount) {
             val child = binding.bandsContainer.getChildAt(i)
-            child?.background?.setColorFilter(black, android.graphics.PorterDuff.Mode.SRC_IN)
+            child?.setBackgroundColor(black)
         }
     }
 
@@ -173,6 +184,7 @@ class MainActivity : AppCompatActivity() {
                 prefs.edit().putInt(KEY_BAND_COUNT, count).apply()
                 vibrate()
                 setupBandRows()
+                applyOledColors()
             }
         }
     }
@@ -327,6 +339,7 @@ class MainActivity : AppCompatActivity() {
         if (night != lastNightMode) {
             lastNightMode = night
             setupBandRows()
+            applyOledColors()
         }
     }
 
